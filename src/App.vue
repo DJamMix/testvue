@@ -1,30 +1,37 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <v-app>
+    <v-app-bar
+      app
+      color="blue"
+      :elevation="2"
+    >
+    
+      <v-app-bar-title>
+        <router-link class="text-decoration-none text-white" to="/">
+          <h3 class="text-h4">TManage</h3>
+        </router-link>
+      </v-app-bar-title>
+
+      <div class="d-flex ga-3 mr-10">
+        <router-link to="/" class="text-h5 text-decoration-none text-white">Главная</router-link>
+        <router-link to="/tasks" class="text-h5 text-decoration-none text-white">Задачи</router-link>
+      </div>
+
+    </v-app-bar>
+    <v-main>
+
+      <router-view>
+        
+      </router-view>
+
+    </v-main>
+     
+   </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+export default {
+  name: 'App'
 }
+</script>
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
